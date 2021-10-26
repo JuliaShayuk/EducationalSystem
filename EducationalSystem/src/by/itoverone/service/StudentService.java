@@ -3,10 +3,8 @@ package by.itoverone.service;
 
 import by.itoverone.entity.Student;
 
+
 import java.util.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class StudentService {
 
@@ -16,19 +14,19 @@ public class StudentService {
         int size = sc.nextInt();
         List<Student> studentsList = new ArrayList<>();
 
-        sc.nextLine();
 
         for (int i = 0; i < size; i++) {
             System.out.println("Enter a name: " + " ");
-            String nameOfStudent = sc.nextLine();
+            String nameOfStudent = sc.next();
+
             System.out.println("Enter number of subjects: " + " ");
             int numSubject = sc.nextInt();
             Map<String, List<Integer>> subjectAndMarks = new HashMap<>();
 
-            for (int j = 0; i < numSubject; i++) {
+            for (int j = 0; j < numSubject; j++) {
                 System.out.println("Enter a subject: " + " ");
-                String subject = sc.nextLine();
-                sc.nextLine();
+                String subject = sc.next();
+
                 System.out.println("Enter number of subject's marks: " + " ");
                 int numMarks = sc.nextInt();
                 sc.nextLine();
@@ -36,7 +34,7 @@ public class StudentService {
                 for (int k = 0; k < numMarks; k++) {
                     System.out.println("Enter a mark: " + " ");
                     int mark = sc.nextInt();
-                    sc.nextLine();
+
                     studentsMarks.add(mark);
                 }
                 subjectAndMarks.put(subject, studentsMarks);
@@ -52,16 +50,17 @@ public class StudentService {
 
         for (Student st : students) {
             Map<String, List<Integer>> marks = st.getMarks();
+            int sum = 0;
+            int count = 0;
             for (Map.Entry<String, List<Integer>> pair : marks.entrySet()) {
-                String subject = pair.getKey();
                 List<Integer> subjectMarks = pair.getValue();
-                int sum = 0;
+
                 for (int i = 0; i < subjectMarks.size(); i++) {
                     sum = sum + subjectMarks.get(i);
                 }
-                int avg = sum / subjectMarks.size();
-
+                count = count + subjectMarks.size();
             }
+            int avg = sum / count;
 
         }
         return averageMarks;
