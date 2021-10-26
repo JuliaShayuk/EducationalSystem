@@ -17,7 +17,7 @@ public class Main {
 
        List<Student> studentsWithAverageGrade = StudentService.getAverageGrade(students);
         System.out.println("Average grade student list: " + " ");
-        StudentService.printStudent(students);
+        StudentService.printStudent(studentsWithAverageGrade);
 
         List<Human> humans = HumanService.getHumans();
         System.out.println("List of humans: " + " ");
