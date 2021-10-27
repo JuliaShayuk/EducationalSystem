@@ -11,6 +11,10 @@ public class Human {
     public Human() {
     }
 
+    public Human(String name){
+        this.name = name;
+    }
+
     public Human(int id, String name, String gender, int age) {
         this.id = id;
         this.name = name;

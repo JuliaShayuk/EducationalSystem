@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.Objects;
 
 public class Student extends Human {
-    private String NameOfStudent;
-    private String subject;
+    private String NameOfStudent;//Delete
+    private String subject;//Delete
     private Map<String, List<Integer>> marks;
 
     public Student(int id, String name, String gender, int age, String nameOfStudent, String subject, Map<String, List<Integer>> marks) {
@@ -17,7 +17,8 @@ public class Student extends Human {
     }
 
     public Student(String nameOfStudent, Map<String, List<Integer>> subjectAndMarks) {
-
+        super(nameOfStudent);
+        this.marks = subjectAndMarks;
     }
 
     public String getNameOfStudent() {
